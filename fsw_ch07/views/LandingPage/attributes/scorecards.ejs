@@ -1,0 +1,32 @@
+<section id="scorecard-area" class="d-flex flex-column justify-content-center">
+    <% scorerList.forEach((data, index) => { %>
+    <div id="scorecard1" 
+        class="d-flex 
+            <% if (index % 2 === 1) { %> justify-content-end
+            <% } else { %> justify-content-start
+            <% } %>">
+        
+        <div class="scorecard">
+            <div class="scorecard-background">
+                <div class="d-flex mb-3">
+                    <div class="profile p-2 d-flex justify-content-center">
+                        <img src="images/assets/ellipse-orange.png">
+                        <div class="overlay"><img src="<%= data.avatar %>" width="65" class="rounded-circle"></div>
+                    </div>
+                    <div class="p-2 d-flex flex-column">
+                        <h4 class="text-warning"><%= data.username %></h4>
+                        <h5 class="text-muted"><%= data.occupation %></h5>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <img src="images/assets/twitter.svg">
+                    </div>
+                </div>
+                <div>
+                    <h5>"<%= data.comment %>"</h5>
+                    <h6 class="text-muted"><%= data.createdAt %></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</section>

@@ -1,0 +1,159 @@
+/*** CSS STYLESHEET FOR ROCK PAPER SCISSORS GAME ***/
+
+
+/********************/
+/*** GAMES LAYOUT ***/
+/********************/
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#wrapper{
+    padding: 2%;
+    height: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+
+#section{
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 80%;
+}
+
+#versus{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+
+
+#player-win, #opponent-win, #draw{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    z-index: 100;
+    
+    padding: 5%;
+    width: 400px;
+    min-height: 65px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#result-area {
+    width: 45%;
+    z-index: 100;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    z-index:50
+}
+
+.rock, .paper, .scissors{  
+    aspect-ratio: 1 / 1;
+    z-index: 50;
+
+}
+
+.rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+
+/*************************/
+/*** RESPONSIVE DESIGN ***/
+/*************************/
+
+@media (orientation: portrait) and (max-width:600px){
+
+    #header{
+        justify-content: space-evenly;
+    }
+
+    #title h2{
+        font-size: 24px;
+    }
+    
+    #section h2{
+        font-size: 20px;
+    }    
+    
+    #versus{
+        font-size: 40px;
+    }
+
+    .rock, .paper, .scissors, #refresh, #result-area{
+        scale: 0.7;
+    }
+
+    .rock, .paper, .scissors{
+        width: 70%;
+        min-width: 150px;   
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+@media only screen and (max-width:900px) and (orientation:landscape){
+    
+    #section h2{
+        font-size: 24px;
+    }   
+    
+    .rock, .paper, .scissors, #refresh, #result-area{
+        scale: 0.8;
+    }
+
+    .rock, .paper, .scissors{
+        width: 60%;
+        min-width: 120px;   
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+@media only screen and (max-width:600px) and (orientation:landscape){
+
+    #header{
+        justify-content: space-evenly;
+    }
+
+    #title h2{
+        font-size: 24px;
+    }
+    
+    #section h2{
+        font-size: 20px;
+    }    
+    
+    .rock, .paper, .scissors, #refresh, #result-area{
+        scale: 0.7;
+    }
+}

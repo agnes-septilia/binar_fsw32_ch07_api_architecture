@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER DATABASE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+<body>
+  <h1 class="m-2">USER DATABASE</h1>
+
+  <br>
+  <% if (alert === true) { %>
+    <div class=" mt-2 ml-2 text-center alert 
+          <% if (type === 'danger') { %> alert-danger 
+          <% } else { %> alert-success 
+          <% } %> 
+        alert-dismissible fade show" style="display:inline-block" role="alert">
+      <strong><%= message %></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <% } %>
+
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">USERNAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">COUNTRY</th>
+        <th scope="col">OCCUPATION</th>
+        <th scope="col">DATE OF BIRTH</th>
+        <th scope="col">CREATED AT</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% userdata.forEach(function (data, index) { %>        
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= data.username %></td>
+        <td><%= data.email %></td>
+        <td><%= data.gender %></td>
+        <td><%= data.country %></td>
+        <td><%= data.occupation %></td>
+        <td><%= data.date_of_birth %></td>
+        <td><%= data.created_at %></td>
+
+        <td>
+          <!-- buttons for each data operations -->
+            <button type="button" class="btn btn-info mx-2" data-toggle="modal" data-target="#infoModal<%= data.id %>" data-placement="bottom" title="Info"><i class="fas fa-info"></i></button>
+            <%- include('infoModal', {data}) %>
+
+            <button type="button" class="btn btn-warning mx-2" data-toggle="modal" data-target="#editModal<%= data.id %>" data-placement="bottom" title="Edit"><i class="far fa-edit"></i></button>
+            <%- include('editModal', {data}) %>
+
+            <button type="button" class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal<%= data.id %>" data-placement="bottom" title="Delete"><i class="far fa-trash-alt"></i></button>
+            <%- include('deleteModal', {data}) %>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <!-- Button to add  data -->
+  <button type="button" class="btn btn-success mx-2" data-toggle="modal" data-target="#addModal" data-placement="bottom" title="Add"><i class="fas fa-plus"></i> ADD DATA</button>
+  <%- include('addModal') %>
+  
+  <button type="button" class="btn btn-secondary mx-2" data-toggle="modal" data-target="#logoutModal" data-placement="bottom" title="Add"><i class="fas fa-sign-out-alt"></i> LOG OUT</button>
+  <%- include('../logoutModal') %>
+</body>
+
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<!-- show password js -->
+<script type="text/javascript" src="javascripts/showPassword.js"></script>
+
+
+</html>

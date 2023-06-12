@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWSLETTER PAGE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/mainStylesheets.css">
+</head>
+<body>
+    <div class="screen d-flex flex-column justify-content-between" id="newsletter-page" style="background-image: url(images/assets/newsletter.png);">
+
+        <section id="newsletter-section">
+
+            <!-- TEXT, FORM, AND BUTTON-->
+            <article id="newsletter-article-area" class="d-flex flex-column">
+                <div id="newsletter-gap">
+                    <h4>Want to stay in touch?</h4>
+                </div>
+
+                <div id="newsletter-gap">
+                    <h2 class="display-3">NEWSLETTER SUBSCRIBE</h2>
+                </div>
+
+                <div id="newsletter-gap">
+                    <h5>In order to start receiving our news, 
+                        all you have to do is enter your email address. 
+                        Everything else will be taken care of by us. 
+                        We will send you emails containing information about game. 
+                        We don't spam.
+                    </h5>
+                </div>
+
+                <div id="newsletter-gap" class="d-flex justify-content-start">
+                    <div id="newsletter-form" class="d-flex flex-column align-items-start justify-content-center">
+                        <h6 class="text-muted pl-3">Your email address</h6>
+                        <h6 class="text-warning pl-3">youremail@binar.co.id</h6>
+                    </div>
+
+                    <div id="newsletter-button">
+                        <a href="/pageNotFound"><button type="button" class="btn btn-warning">Subscribe Now</button></a>
+                    </div>
+                        
+                </div>
+            </article>
+
+        </section>
+
+        <!-- FOOTER AREA -->
+        <%- include('attributes/navBarFooter') %>
+
+    </div>
+</body>
+
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,64 @@
+<!-- User card for Edit Profile -->
+<form action="/profile" method="post" enctype="application/x-www-form-urlencoded">
+    <div class="d-flex justify-content-center pb-3" id="input-area" >
+        
+        <!-- AVATAR PHOTO -->
+        <div id = "avatar-area">
+            <image src="<%= userdata.avatar %>" heigth="250" width="250" id="default-avatar">
+        </div>
+
+        <!-- USER DATA -->
+        <div id="registration-area" class="d-flex flex-column justify-content-start align-items-start pr-5">
+            <div class="d-flex justify-content-start align-items-start">
+                <div class="pr-3">
+                    <label>Username:</label>
+                    <label><%= userdata.username %></label>
+                    <br>
+                    <label>Email:</label>
+                    <label><%= userdata.email %></label>
+                    <br>
+                    <div>
+                        <label for="input-gender">Gender :</label>
+                        <br>
+                        <select class="input-field" name="gender" id="input-gender">
+                            <option placeholder=""
+                                <% if (userdata.gender === '') { %> selected
+                                <% } %> ></option>
+                            <option placeholder="Female"
+                                <% if (userdata.gender === 'Female') { %> selected
+                                <% } %> >Female</option>
+                            <option placeholder="Male"
+                                <% if (userdata.gender === 'Male') { %> selected
+                                <% } %> >Male</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="input-country">Country :</label>
+                        <br>
+                        <input class="input-field" type="text" name="country" id="input-country" placeholder="<%= userdata.country %>">   
+                    </div>
+                    <br>
+                    <div>
+                        <label for="input-occupation">Occupation :</label>
+                        <br>
+                        <input class="input-field" type="text" name="occupation" id="input-occupation" placeholder="<%= userdata.occupation %>">   
+                    </div>
+                    <br>
+                    <div>
+                        <label for="input-dob">Date of Birth :</label>
+                        <br>
+                        <input class="input-field" type="date" name="dateOfBirth" id="input-dob" value="<%= userdata.dateOfBirth %>">   
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-warning mr-2" name="editProfileButton" value="<%= userdata.id %>">Save</button>
+                <button type="button" class="btn btn-warning ml-2" onclick="history.go(-1)">Back</button>
+            </div>
+        </div>
+    </div>
+</form>

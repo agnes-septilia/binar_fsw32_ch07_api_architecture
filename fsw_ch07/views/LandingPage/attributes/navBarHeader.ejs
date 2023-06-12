@@ -1,0 +1,39 @@
+<!-- Navigation Bar for Homa Page Header -->
+
+<header id="main-header" class="d-flex align-items-center justify-content-between">
+    
+    <!-- LOGO -->
+    <div id="logo">
+        <h4>LOGO</h4>
+    </div>
+
+    <!-- NAVBAR-->
+    <div id="main-navigation">
+        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-end">
+            <button class="navbar-toggler" type="menu" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white;" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link active" style="color:white;" href="/">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link active" style="color:white;" href="/pageNotFound">WORK</a></li>
+                    <li class="nav-item"><a class="nav-link active" style="color:white;" href="/pageNotFound">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-link active" style="color:white;" href="/pageNotFound">ABOUT ME</a></li>                                
+                </ul>
+                <ul class="navbar-nav mr-auto d-flex align-items-center">
+                    <% if (token === null) { %>
+                        <li class="nav-item"><a class="nav-link active" style="color:white;" href="/signup">SIGN UP</a></li>
+                        <li class="nav-item"><a class="nav-link active" style="color:white;" href="/login">LOGIN</a></li>
+                   
+                    <% } else { %>
+                        <li class="nav-item"><a href="/profile"><image src="<%= avatar %>" height="50" width="50"/></a></li>
+                        <li class="nav-item"><a class="nav-link active" style="color:white;" href="/profile"><u>Welcome, <%= username %>!</u></a></li>
+                        <li class="nav-item"><a class="nav-link active" style="color:white;cursor: pointer" data-toggle="modal" data-target="#logoutModal" >LOG OUT</a></li>
+                        <%- include('../../logoutModal') %>
+                        <% } %>
+                </ul>                        
+            </div>
+        </nav>
+    </div>
+</header>

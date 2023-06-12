@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME ENTRANCE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/registerStylesheets.css">
+
+</head>
+<body>
+    <div class="screen d-flex flex-column align-items-center justify-content-start" id="game-page" style="background-image: url(images/assets/main-bg.jpg);">
+        <div class="m-5 p-3" style="background-color: rgba(255,255,255,0.6); border-radius: 30px;">
+
+
+        <% if (source === 'landing') { %>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h3 class="text-dark"><b>Are you ready to play?</b></h3>
+                <h6 class="m-3 text-dark"><i>We'll be looking an opponent for you...</i></h6>
+                <br>
+            </div>
+            <form action="/room" method="post">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <button class = "btn btn-warning" type = "submit" >Yes! Let's play the game!</button>
+                    <br>
+                    <a href="/"><button class="btn btn-warning" type = "button">I changed my mind, send me back!</button></a>
+                    <br>
+                </div>
+            </form>
+
+
+        <% } else if (source === 'loadRoom') { %>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h6 class="m-3 text-dark" ><i>We couldn't find an opponent for you...</i></h6>
+                <h3 class="text-dark"><b>Do you want to reload?</b></h3>
+                <br>
+            </div>
+            <form action="/room" method="post">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <button class = "btn btn-warning" type = "submit" >Of course!</button>
+                    <br>
+                    <a href="/"><button class="btn btn-warning" type = "button">Nevermind, I'll try again later</button></a>
+                    <br>
+                </div>
+            </form>
+            
+
+        <% } else if (source === 'leaveRoom') { %>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h6 class="m-3 text-dark" ><i>Seems the opponent is afraid with you...</i></h6>
+                <h3 class="text-dark"><b>Do you still want to play?</b></h3>
+                <br>
+            </div>
+            <form action="/room" method="post">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <button class = "btn btn-warning" type = "submit" >Sure! Let's start again!</button>
+                    <br>
+                    <a href="/"><button class="btn btn-warning" type = "button">No need, I'm leaving too</button></a>
+                    <br>
+                </div>
+            </form>
+
+        <% } else if (source === 'gameOver') { %>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <% if (finalMatch === 'win') { %>
+                    <h3 class="text-center">Congratz! You win the game, <%= playerInfo.username %> !!! </h3>
+                <% } else if (finalMatch === 'lose') {%> 
+                    <h3 class="text-center">Better luck next time, <%= playerInfo.username %> !</h3>
+                <% } else if (finalMatch === 'draw') { %>
+                    <h3 class="text-center">It's a tie, <%= playerInfo.username %>!!</h3>
+                <% } %>
+                    
+                <div class="m-3"><img src="<%= playerInfo.avatar %>" class="img-fluid" width="100" alt="swipe-down"></div>
+            </div>
+
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h3 class="text-dark"><b>Do you want to play again?</b></h3>
+                <br>
+            </div>
+            <form action="/room" method="post">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <button class = "btn btn-warning" type = "submit" >Definitely!</button>
+                    <br>
+                    <a href="/"><button class="btn btn-warning" type = "button">Thanks, that's enough for today!</button></a>
+                    <br>
+                </div>
+            </form>
+        <% } %>
+
+
+        </div>
+    </div>
+</body>
+
+<!-- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<!-- show password js -->
+<script type="text/javascript" src="javascripts/showPassword.js"></script>
+
+</html>

@@ -1,0 +1,25 @@
+<h5 class="m-2"><b><u>Game Statistic</u></b></h5>
+<div class="tableFixHead d-flex justify-content-center m-2">
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">PLAY TIME</th>
+        <th scope="col">WEAPON</th>
+        <th scope="col">RESULT</th>
+        <th scope="col">SCORE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% userGameData.forEach(function (data, index) { %>
+      
+      <tr>
+        <td><%= data.createdAt %></td>
+        <td><%= data.weapon %></td>
+        <td><%= data.result %></td>
+        <td><%= data.score %></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>

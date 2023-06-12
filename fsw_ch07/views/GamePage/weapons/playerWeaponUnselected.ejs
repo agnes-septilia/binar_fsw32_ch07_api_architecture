@@ -1,0 +1,13 @@
+<form method="post" action="/gameResult" enctype="application/x-www-form-urlencoded">
+    <div id="weapons" class="d-flex flex-column align-items-center justify-content-center">
+    <button id="player-rock" class="player-weapons rock d-flex justify-content-center align-items-center" type="submit" name="rock" value="<%= JSON.stringify(playerInfo) %>">
+        <img src="images/assets/batu.png" class="img-fluid m-1" width="80" alt="swipe-down">
+    </button>
+    <button id="player-paper" class="player-weapons paper m-2 d-flex justify-content-center align-items-center" type="submit" name="paper" value="<%= JSON.stringify(playerInfo) %>">
+        <img src="images/assets/kertas.png" class="img-fluid m-1" width="80" alt="swipe-down">
+    </button>
+    <button id="player-scissors" class="player-weapons scissors d-flex justify-content-center align-items-center" type="submit" name="scissors" value="<%= JSON.stringify(playerInfo) %>">
+        <img src="images/assets/gunting.png" class="img-fluid m-1" width="80" alt="swipe-down">
+    </button>
+</div>
+</form>

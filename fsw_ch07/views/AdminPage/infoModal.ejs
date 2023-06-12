@@ -1,0 +1,68 @@
+<!-- Modal For info Data-->
+<div class="modal fade" id="infoModal<%= data.id %>" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <div>
+                <label>Username :</label>
+                <text><%= data.username %></text>
+            </div>
+
+            <div>
+                <label>Email :</label>
+                <text><%= data.email %></text>
+            </div>
+
+            <div>
+                <label>Gender :</label>
+                <text><%= data.gender %></text>
+            </div>
+
+            <div>
+                <label>Country :</label>
+                <text><%= data.country %></text>
+            </div>
+            
+            <div>
+                <label>Occupation :</label>
+                <text><%= data.occupation %></text>
+            </div>
+
+            <div>
+                <label>Date of Birth :</label>
+                <text><%= data.date_of_birth %></text>
+            </div>
+
+            <hr>
+
+            <h5><b><u>Game Statistic</u></b></h5>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">WINS</th>
+                  <th scope="col">DRAWS</th>
+                  <th scope="col">LOSES</th>
+                  <th scope="col">TOTAL SCORE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= data.total_wins %></td>
+                  <td><%= data.total_draws %></td>
+                  <td><%= data.total_loses %></td>
+                  <td><%= data.total_scores %></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+
+      </div>
+    </div>
+  </div>

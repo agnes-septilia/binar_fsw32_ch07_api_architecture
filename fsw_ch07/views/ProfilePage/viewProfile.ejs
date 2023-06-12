@@ -1,0 +1,34 @@
+<!-- User card for View Profile -->
+
+<div class="d-flex justify-content-center" id="input-area" >
+    <!-- AVATAR PHOTO -->
+    <div id = "avatar-area">
+        <image src="<%= userdata.avatar %>" heigth="250" width="250" id="default-avatar">
+    </div>
+
+        <!-- USER DATA -->
+    <div id="registration-area">
+        <label><i class="fas fa-circle"></i>  Username:</label>
+        <label><%= userdata.username %></label>
+        <br>
+        <label><i class="fas fa-circle"></i>  Email:</label>
+        <label><%= userdata.email %></label>
+        <br>
+        <label><i class="fas fa-circle"></i>  Gender:</label>
+        <label><%= userdata.gender %></label>
+        <br>
+        <label><i class="fas fa-circle"></i>  Country:</label>
+        <label><%= userdata.country %></label>
+        <br>
+        <label><i class="fas fa-circle"></i>  Occupation:</label>
+        <label><%= userdata.occupation %></label>
+        <br>
+        <label><i class="fas fa-circle"></i>  Date of Birth:</label>
+        <label><%= userdata.dateOfBirth %></label>
+        <br>
+        <div class="d-flex justify-content-center align-items-center" id="button-area">
+            <a href='/updateProfile'><button type="button" class="btn btn-warning mr-2">Edit</button></a>
+            <a href='/'><button type="button" class="btn btn-warning ml-2">Home</button></a>
+        </div>
+    </div>
+</div>
